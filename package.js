@@ -65,6 +65,7 @@ Package.onTest(function(api) {
   api.addFiles([
     'tests/util.js',
     'tests/mongoDBQuery.js',
-    'tests/utilIntegration.js'
+    'tests/utilIntegration.js',
+    'tests/examples.js'  // Example tests demonstrating test helper usage
   ], 'client' );
 });

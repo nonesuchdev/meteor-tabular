@@ -59,7 +59,9 @@ Package.onTest(function(api) {
     'ecmascript'
   ]);
 
-  // Load helpers first, then reusedFunctions (which imports from helpers):
+  // Load helpers first for the helper functions themselves,
+  // then reusedFunctions.js which imports from helpers and exports them globally,
+  // finally the test files which depend on the global exports
   api.addFiles('tests/helpers/testHelpers.js', 'client');
   api.addFiles('tests/reusedFunctions.js', 'client');
   api.addFiles([

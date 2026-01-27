@@ -8,9 +8,12 @@
  * These are kept here for backward compatibility with the existing test files.
  */
 
-import { LogResults as _LogResults, GenerateBothColumns as _GenerateBothColumns, createRegExpField as _createRegExpField } from './helpers/testHelpers.js';
+import { LogResults, GenerateBothColumns, createRegExpField } from './helpers/testHelpers.js';
 
 // Export as global functions for backward compatibility with existing tests
-LogResults = _LogResults;
-GenerateBothColumns = _GenerateBothColumns;
-createRegExpField = _createRegExpField;
+// (The global window assignments are in this file only, not duplicated in testHelpers.js)
+if (typeof window !== 'undefined') {
+  window.LogResults = LogResults;
+  window.GenerateBothColumns = GenerateBothColumns;
+  window.createRegExpField = createRegExpField;
+}

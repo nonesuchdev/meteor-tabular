@@ -53,9 +53,9 @@ export const LogResults = function(Input, ExpectedOutput, Output, test) {
  * // result.ExpectedOutput: expected parsed output
  */
 export const GenerateBothColumns = function(SpacedClassList) {
-	var BothCols = {} // Its easier to return an object
-	BothCols.columns = [] // Note: should be an array
-	BothCols.ExpectedOutput = [] // likewise, output is array
+	var BothCols = {} // It's easier to return an object
+	BothCols.columns = []
+	BothCols.ExpectedOutput = []
 	_.each(SpacedClassList, function(ClassList) {
 		BothCols.columns.push({
 			class: ClassList,
@@ -97,7 +97,7 @@ export const GenerateBothColumns = function(SpacedClassList) {
  * // Returns array of field configs with search values
  */
 export const createRegExpField = function(SpacedClassList, searchString, PassedOptions) {
-	var columns = [] // Note: this is usually an array
+	var columns = []
 	_.each(SpacedClassList, function(ClassList) {
 		var Classes = ClassList.split(' ')
 		columns = columns.concat(
@@ -116,9 +116,4 @@ export const createRegExpField = function(SpacedClassList, searchString, PassedO
 	return columns;
 }
 
-// Re-export for backwards compatibility
-if (typeof window !== 'undefined') {
-  window.LogResults = LogResults;
-  window.GenerateBothColumns = GenerateBothColumns;
-  window.createRegExpField = createRegExpField;
-}
+// Note: Global exports are handled in tests/reusedFunctions.js for backward compatibility

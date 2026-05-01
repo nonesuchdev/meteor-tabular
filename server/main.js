@@ -2,6 +2,7 @@ import { Meteor } from 'meteor/meteor';
 import { check, Match } from 'meteor/check';
 import { _ } from 'meteor/underscore';
 import Tabular from '../common/Tabular';
+import '../common/tables/surveyTables';
 
 /*
  * These are the two publications used by TabularTable.

@@ -9,6 +9,7 @@ import getPubSelector from './getPubSelector';
 import { getMongoSort, objectsAreEqual, sortsAreEqual } from './util';
 
 import './tabular.html';
+import '../common/tables/surveyTables';
 
 dataTableInit(window, $);
 
